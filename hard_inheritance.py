@@ -67,21 +67,11 @@ class Circle(Figure):
     sides_count = 1
 
     def __init__(self, color, *args):
-        super().__init__(color=color, *args)
-        self.__radius = self.set_sides() / 2 * pi
+        super().__init__(color, *args)
+        # self.__radius = self.set_sides() / 2 * pi
 
     def get_color(self):
         super().get_color()
-
-    def __is_valid_color(self, *args):
-        count = 0
-        for side in args:
-            if isinstance(side, int) and side > 0:
-                count += 1
-            else:
-                return False
-        if count == self.sides_count or (count == 1 and self.sides_count > 2):
-            return True
 
     def set_color(self, r, g, b):
         super().set_color(r=r, g=g, b=b)
